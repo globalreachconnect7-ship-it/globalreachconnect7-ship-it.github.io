@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking Me | Discover & Connect</title>
+
+    <meta name="description"
+          content="Discover profiles and request appointments with Booking Me.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <a href="#" class="logo">Booking<span>Me.</span></a>
+
+    <button class="menu-button" id="menuButton">☰</button>
+
+    <nav id="navigation">
+        <a href="#home">Home</a>
+        <a href="#profiles">Discover</a>
+        <a href="#how">How It Works</a>
+        <a href="#booking" class="nav-button">Book Now</a>
+    </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+        <p class="eyebrow">DISCOVER • CONNECT • BOOK</p>
+
+        <h1>
+            Meet someone new.
+            <span>Make it memorable.</span>
+        </h1>
+
+        <p>
+            Explore profiles, discover shared interests,
+            and request a meeting that works for you.
+        </p>
+
+        <a href="#profiles" class="button">
+            Explore Profiles →
+        </a>
+    </div>
+
+    <div class="hero-card">
+        <div class="hero-circle">BM</div>
+        <h2>Your next connection starts here.</h2>
+        <p>Respectful connections. Clear intentions.</p>
+    </div>
+
+</section>
+
+<section class="search-section">
+
+    <h2>Find your next connection</h2>
+
+    <div class="search-box">
+        <input
+            type="search"
+            id="searchInput"
+            placeholder="Search by US city..."
+        >
+
+        <button onclick="searchProfiles()">Search</button>
+    </div>
+
+</section>
+
+<section class="profiles section" id="profiles">
+
+    <div class="section-heading">
+        <p class="eyebrow">MEET THE COMMUNITY</p>
+        <h2>Featured Profiles</h2>
+        <p>Example profiles for website demonstration.</p>
+    </div>
+
+    <div class="profile-grid" id="profileGrid">
+
+        <article class="profile-card" data-city="miami">
+
+            <img
+                src="assets/profile-city.jpg"
+                alt="Lifestyle profile"
+            >
+
+            <div class="profile-details">
+                <span class="badge">DEMO PROFILE</span>
+
+                <h3>Alex, 27</h3>
+
+                <p>📍 Miami, Florida</p>
+
+                <p>
+                    Enjoys art, city adventures, and
+                    meeting people with shared interests.
+                </p>
+
+                <button
+                    class="outline-button"
+                    onclick="selectProfile('Alex')"
+                >
+                    Request a Meeting
+                </button>
+            </div>
+
+        </article>
+
+        <article class="profile-card" data-city="san diego">
+
+            <img
+                src="assets/profile-beach.jpg"
+                alt="Beach lifestyle profile"
+            >
+
+            <div class="profile-details">
+                <span class="badge">DEMO PROFILE</span>
+
+                <h3>Jordan, 29</h3>
+
+                <p>📍 San Diego, California</p>
+
+                <p>
+                    Loves travel, ocean views, and
+                    relaxed social experiences.
+                </p>
+
+                <button
+                    class="outline-button"
+                    onclick="selectProfile('Jordan')"
+                >
+                    Request a Meeting
+                </button>
+            </div>
+
+        </article>
+
+        <article class="profile-card" data-city="new york">
+
+            <div class="placeholder-image">
+                <span>BM</span>
+            </div>
+
+            <div class="profile-details">
+                <span class="badge">DEMO PROFILE</span>
+
+                <h3>Taylor, 26</h3>
+
+                <p>📍 New York, New York</p>
+
+                <p>
+                    Interested in music, museums,
+                    and exploring the city.
+                </p>
+
+                <button
+                    class="outline-button"
+                    onclick="selectProfile('Taylor')"
+                >
+                    Request a Meeting
+                </button>
+            </div>
+
+        </article>
+
+    </div>
+
+    <p id="noResults" hidden>
+        No profiles found. Try another city.
+    </p>
+
+</section>
+
+<section class="how section" id="how">
+
+    <div class="section-heading">
+        <p class="eyebrow">SIMPLE AND STRAIGHTFORWARD</p>
+        <h2>How It Works</h2>
+    </div>
+
+    <div class="steps">
+
+        <article>
+            <span>01</span>
+            <h3>Explore</h3>
+            <p>Browse available profiles and learn about their interests.</p>
+        </article>
+
+        <article>
+            <span>02</span>
+            <h3>Request</h3>
+            <p>Choose a profile and submit your preferred meeting details.</p>
+        </article>
+
+        <article>
+            <span>03</span>
+            <h3>Confirm</h3>
+            <p>Meet only when both adults agree to the arrangements.</p>
+        </article>
+
+    </div>
+
+</section>
+
+<section class="booking-section section" id="booking">
+
+    <div class="section-heading">
+        <p class="eyebrow">YOUR NEXT STEP</p>
+        <h2>Request a Meeting</h2>
+        <p>This demonstration does not send or save booking information.</p>
+    </div>
+
+    <form id="bookingForm">
+
+        <label for="fullName">Your Name</label>
+
+        <input
+            id="fullName"
+            name="name"
+            type="text"
+            maxlength="80"
+            required
+            placeholder="Enter your name"
+        >
+
+        <label for="email">Email Address</label>
+
+        <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="you@example.com"
+        >
+
+        <label for="profile">Choose a Profile</label>
+
+        <select id="profile" name="profile" required>
+            <option value="">Select a profile</option>
+            <option value="Alex">Alex</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Taylor">Taylor</option>
+        </select>
+
+        <label for="city">Meeting City</label>
+
+        <input
+            id="city"
+            name="city"
+            required
+            placeholder="City, State"
+        >
+
+        <label for="date">Preferred Date</label>
+
+        <input
+            id="date"
+            name="date"
+            type="date"
+            required
+        >
+
+        <label for="message">Message</label>
+
+        <textarea
+            id="message"
+            name="message"
+            rows="4"
+            maxlength="600"
+            placeholder="Introduce yourself"
+        ></textarea>
+
+        <label class="consent">
+            <input type="checkbox" required>
+            I am 18 or older and agree to respect
+            consent, boundaries, and applicable laws.
+        </label>
+
+        <button class="button submit-button" type="submit">
+            Preview Booking Request
+        </button>
+
+        <p id="formMessage" role="status"></p>
+
+    </form>
+
+</section>
+
+<section class="safety section">
+
+    <h2>Safety Comes First</h2>
+
+    <p>
+        Booking Me is designed around privacy, consent,
+        respectful communication, and responsible meetings.
+    </p>
+
+    <p>
+        A production launch requires appropriate age verification,
+        privacy protections, moderation, and compliance with
+        applicable laws.
+    </p>
+
+</section>
+
+</main>
+
+<footer>
+    <a href="#" class="logo">Booking<span>Me.</span></a>
+
+    <p>Discover. Connect. Book.</p>
+
+    <p>© <span id="year"></span> Booking Me</p>
+
+    <p>Demonstration website — bookings and payments are not live.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+:root {
+    --primary: #7545e8;
+    --dark: #201a30;
+    --background: #f8f7fc;
+    --text: #302c3c;
+    --muted: #777183;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background: var(--white);
+    border-bottom: 1px solid #eeeaf6;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.nav-button {
+    background: var(--primary);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 7px;
+}
+
+.menu-button {
+    display: none;
+    border: 0;
+    background: transparent;
+    font-size: 25px;
+}
+
+.hero {
+    padding: 85px 7%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 500px;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
+
+.button {
+    display: inline-block;
+    border: 0;
+    background: var(--primary);
+    color: white;
+    padding: 15px 23px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button:hover,
+.search-box button:hover {
+    background: #6034cc;
+}
+
+.hero-card {
+    background: linear-gradient(145deg, #e6dcff, #c8b6ff);
+    border-radius: 20px;
+    min-height: 350px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-circle {
+    width: 115px;
+    height: 115px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--primary);
+    color: white;
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.hero-card h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: #65577d;
+    font-size: 14px;
+}
+
+.search-section {
+    margin: 0 7%;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+}
+
+.search-section h2 {
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.search-box {
+    display: flex;
+    gap: 12px;
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px;
+    border: 1px solid #e2ddec;
+    border-radius: 7px;
+}
+
+.search-box button {
+    padding: 14px 24px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+.section {
+    padding: 85px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading h2,
+.safety h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.profile-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px #21143b0a;
+}
+
+.profile-card > img,
+.placeholder-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.placeholder-image {
+    background: linear-gradient(140deg, #bda6f6, #7545e8);
+    display: grid;
+    place-items: center;
+    color: white;
+    font-size: 70px;
+    font-weight: 800;
+}
+
+.profile-details {
+    padding: 22px;
+}
+
+.badge {
+    color: var(--primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.profile-details h3 {
+    font-size: 23px;
+    margin: 8px 0;
+}
+
+.profile-details p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+.outline-button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+    background: white;
+    border: 1px solid var(--primary);
+    border-radius: 7px;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.outline-button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.how {
+    background: white;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.steps article {
+    padding: 25px;
+    background: var(--background);
+    border-radius: 12px;
+}
+
+.steps article > span {
+    color: var(--primary);
+    font-weight: 800;
+}
+
+.steps h3 {
+    margin: 15px 0 8px;
+}
+
+.steps p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.booking-section {
+    background: #f0eaff;
+}
+
+#bookingForm {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+}
+
+#bookingForm > label:not(.consent) {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin: 18px 0 7px;
+}
+
+#bookingForm input:not([type="checkbox"]),
+#bookingForm select,
+#bookingForm textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e2ddec;
+    border-radius: 6px;
+    background: white;
+}
+
+.consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 12px;
+    margin: 20px 0;
+}
+
+.consent input {
+    margin-top: 4px;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+#formMessage {
+    margin-top: 15px;
+    color: #26733c;
+    font-size: 13px;
+}
+
+.safety {
+    text-align: center;
+}
+
+.safety p {
+    max-width: 650px;
+    margin: 15px auto;
+    color: var(--muted);
+}
+
+footer {
+    padding: 40px 7%;
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    font-size: 12px;
+    color: #d4cddd;
+    margin-top: 10px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 760px) {
+    header {
+        padding: 18px 5%;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        z-index: 5;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 15px 5%;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 12px 0;
+    }
+
+    .hero {
+        padding: 55px 5%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-card {
+        min-height: 270px;
+    }
+
+    .search-section {
+        margin: 0 5%;
+        padding: 20px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+// Footer year
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+// Mobile navigation
+const menuButton = document.getElementById("menuButton");
+const navigation = document.getElementById("navigation");
+
+menuButton.addEventListener("click", function () {
+    navigation.classList.toggle("open");
+});
+
+// Close mobile navigation after clicking a link
+navigation.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navigation.classList.remove("open");
+    });
+});
+
+// Search profiles by US city
+function searchProfiles() {
+    const searchInput = document
+        .getElementById("searchInput")
+        .value.trim()
+        .toLowerCase();
+
+    const cards = document.querySelectorAll(".profile-card");
+
+    let visibleCount = 0;
+
+    cards.forEach(function (card) {
+        const city = card.dataset.city.toLowerCase();
+
+        const matches =
+            searchInput === "" || city.includes(searchInput);
+
+        card.hidden = !matches;
+
+        if (matches) {
+            visibleCount++;
+        }
+    });
+
+    document.getElementById("noResults").hidden =
+        visibleCount !== 0;
+}
+
+// Search when Enter is pressed
+document
+    .getElementById("searchInput")
+    .addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            searchProfiles();
+        }
+    });
+
+// Select a profile in the booking form
+function selectProfile(name) {
+    document.getElementById("profile").value = name;
+
+    document.getElementById("booking").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Demonstration-only booking form
+document
+    .getElementById("bookingForm")
+    .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        document.getElementById("formMessage").textContent =
+            "Demo only: your request has not been sent or saved. " +
+            "A secure booking backend must be connected before launch.";
+    });
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .profile-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card > img,
+    .placeholder-image {
+        height: 320px;
+    }
+
+    .section-heading h2,
+    .safety h2 {
+        font-size: 30px;
+    }
+
+    #bookingForm {
+        padding: 22px;
+    }
+}
